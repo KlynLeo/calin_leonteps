@@ -6,22 +6,12 @@ generate_random_permutation <- function(n) {
   permutation <- order(U)
   return(permutation)
 }
-
-generate_random_bit_strings <- function(n, k) {
-  bit_strings <- matrix(sample(c(0, 1), n * k, replace = TRUE), nrow = n, ncol = k)
-  return(bit_strings)
-}
-
-n <- 10  
-k <- 4   
+n <- 12  
+k <- 5   
 
 random_permutation <- generate_random_permutation(n)
 print("Random Permutation:")
-print(random_permutation)
-
-random_bit_strings <- generate_random_bit_strings(n, k)
-print("Random Bit Strings:")
-print(random_bit_strings)
+print(random_permutation) 
 
 #b)
 set.seed(123)
@@ -75,8 +65,8 @@ compare_lexicographically <- function(Wi, Wj) {
   }
 }
 
-Wi <- c(1, 0, 0, 1)
-Wj <- c(1, 0, 1)
+Wi <- c(1, 1, 0)
+Wj <- c(1, 1)
 
 result <- compare_lexicographically(Wi, Wj)
 print("Wi este mai mic decat Wj:")
